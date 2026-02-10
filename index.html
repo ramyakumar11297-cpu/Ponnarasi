@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Valentine</title>
+
   <style>
-    body{
-      background: pink;
+    body {
+      margin: 0;
       height: 100vh;
+      background: pink;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
     }
 
-    .box{
+    .box {
       background: white;
       padding: 30px;
       border-radius: 15px;
       text-align: center;
       width: 300px;
+      position: relative;
     }
 
-    button{
+    button {
       padding: 10px 20px;
       border: none;
       border-radius: 20px;
@@ -28,42 +33,42 @@
       cursor: pointer;
     }
 
-    #yes{
+    #yes {
       background: hotpink;
       color: white;
     }
 
-    #no{
-      position: absolute;
+    #no {
       background: #ddd;
+      position: fixed; /* IMPORTANT */
     }
   </style>
 </head>
+
 <body>
 
-<div class="box">
-  <h1>Ruban Jabakumar 💖</h1>
-  <h2>Will you be my Valentine? 💖</h2>
-  <p id="msg">Choose wisely 😄</p>
+  <div class="box">
+    <h1>Ruban Jabakumar 💖</h1>
+    <h2>Will you be my Valentine? 💖</h2>
 
-  <button id="yes">YES</button>
-  <button id="no">NO</button>
-</div>
+    <button id="yes">YES</button>
+    <br><br>
+    <button id="no">NO</button>
+  </div>
 
-<script>
-  const noBtn = document.getElementById("no");
+  <script>
+    const noBtn = document.getElementById("no");
 
-  noBtn.addEventListener("mouseover", () => {
-    // text change
-   noBtn.innerText = "Please click pannatha 😜";
-    // random position
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
+    noBtn.addEventListener("mouseenter", () => {
+      noBtn.innerText = "Please click pannatha 😜";
 
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
-  });
-</script>
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 60);
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+  </script>
 
 </body>
 </html>
