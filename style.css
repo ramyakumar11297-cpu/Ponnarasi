@@ -116,7 +116,18 @@ p {
     margin-bottom: 30px;
     text-align: center;
 }
-
+h3 {
+    font-family: var(--TimesNewRomen);
+    font-size: 1.5rem;
+    color: var(--Dodgerblue);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.2;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 2%
+}
 .btn {
     padding: 15px 40px;
     font-size: 1.2rem;
@@ -174,3 +185,4 @@ p {
 .proposal-content h1 {
     animation: heartbeat 2s infinite;
 }
+
