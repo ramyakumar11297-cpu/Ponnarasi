@@ -119,7 +119,7 @@ p {
 h3 {
     font-family: var(--TimesNewRomen);
     font-size: 1.5rem;
-    color: var(--Dodgerblue);
+    color: rgb(121, 97, 247);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     margin-bottom: 20px;
     text-align: center;
@@ -185,4 +185,5 @@ h3 {
 .proposal-content h1 {
     animation: heartbeat 2s infinite;
 }
+
 
