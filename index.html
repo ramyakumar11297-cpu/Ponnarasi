@@ -1,77 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Valentine</title>
-
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: pink;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
-
-    .box {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      text-align: center;
-      width: 300px;
-      position: relative;
-    }
-
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    #yes {
-      background: hotpink;
-      color: white;
-    }
-
-    #no {
-      background: #ddd;
-      position: fixed; /* IMPORTANT */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Background Music (Optional, user initiates) -->
+    <!-- <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio> -->
 
-  <div class="box">
-    <h1>Ruban Jabakumar 💖</h1>
-    <h2>Will you be my Valentine? 💖</h2>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
 
-    <button id="yes">YES</button>
-    <br><br>
-    <button id="no">NO</button>
-  </div>
+        <!-- UI Overlay -->
+        <div id="ui-layer">
+            <div id="score-board">
+                <span>❤️ Love Meter: </span>
+                <div class="progress-bar">
+                    <div id="love-fill"></div>
+                </div>
+            </div>
+        </div>
 
-  <script>
-    const noBtn = document.getElementById("no");
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <h1>Catch the Love!</h1>
+            <p>Catch enough hearts to reveal a special question...</p>
+            <button id="start-btn" class="btn">Start Game</button>
+        </div>
 
-    noBtn.addEventListener("mouseenter", () => {
-      noBtn.innerText = "Please click pannatha 😜"
-                        "Vendaam da 😂"
-                        "Enna torture ithu 😆"
-                        "YES thaan click pannu pls ❤️";
+        <!-- Proposal Modal (Hidden initially) -->
+        <div id="proposal-screen" class="screen hidden">
+            <div class="proposal-content">
+                <h1>Will You Be My Valentine?</h1>
+                <p class="sub-text">You caught my heart! Now I have to ask...</p>
+                <div class="buttons">
+                    <button id="yes-btn" class="btn yes-btn">YES!</button>
+                    <button id="no-btn" class="btn no-btn">No</button>
+                </div>
+            </div>
+        </div>
 
-      const x = Math.random() * (window.innerWidth - 120);
-      const y = Math.random() * (window.innerHeight - 60);
+        <!-- Celebration Overlay -->
+        <div id="celebration-screen" class="screen hidden">
+            <h1>Happy Propose Day! 💍</h1>
+            <p>I love you!</p>
+        </div>
+    </div>
 
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
-    });
-  </script>
-
+    <script src="script.js"></script>
 </body>
+
 </html>
